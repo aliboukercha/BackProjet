@@ -16,14 +16,13 @@ import com.projet.db.UserRepository;
 import com.projet.model.User;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "users")
 public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
 	
-	@GetMapping("/get")
+	@GetMapping()
 	public List<User> getUsers() {
 		return userRepository.findAll();
 	}

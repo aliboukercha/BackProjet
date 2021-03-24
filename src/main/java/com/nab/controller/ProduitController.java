@@ -20,9 +20,7 @@ import com.projet.db.ProduitRepository;
 import com.projet.model.Produit;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "produits")
-
 public class ProduitController {
 	
 	private byte[] bytes;
