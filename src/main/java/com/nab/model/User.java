@@ -1,7 +1,8 @@
-package com.projet.model;
+package com.nab.model;
 
 import lombok.AllArgsConstructor;
-import net.bytebuddy.asm.Advice;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "user")
 public class User {
@@ -28,6 +29,4 @@ public class User {
 
 	@Column(name = "type")
 	private String type;
-
-
 }

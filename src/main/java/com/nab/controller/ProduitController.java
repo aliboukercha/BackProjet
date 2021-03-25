@@ -1,10 +1,9 @@
-package com.projet.controller;
+package com.nab.controller;
 
 import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.projet.db.ProduitRepository;
-import com.projet.model.Produit;
+import com.nab.db.ProduitRepository;
+import com.nab.model.Produit;
 
 @RestController
 @RequestMapping(path = "produits")
@@ -28,7 +27,7 @@ public class ProduitController {
 	@Autowired
 	private ProduitRepository produitRepository;
 	
-	@GetMapping("/get")
+	@GetMapping()
 	public List<Produit> getProduits() {
 		return produitRepository.findAll();
 	}
