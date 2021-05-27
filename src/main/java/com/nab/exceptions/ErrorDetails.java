@@ -1,4 +1,4 @@
-package com.nab.exception;
+package com.nab.exceptions;
 
 import java.util.Date;
 

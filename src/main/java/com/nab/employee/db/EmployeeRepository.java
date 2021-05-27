@@ -1,4 +1,4 @@
-package com.nab.db;
+package com.nab.employee.db;
 
 import com.nab.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;

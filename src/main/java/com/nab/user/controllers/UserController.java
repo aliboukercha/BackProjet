@@ -1,8 +1,10 @@
-package com.nab.controller;
+package com.nab.user.controllers;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,22 +13,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nab.db.UserRepository;
+import com.nab.user.db.UserRepository;
 import com.nab.model.User;
 
 @RestController
-@RequestMapping(path = "users")
+@RequestMapping("users")
 public class UserController {
 
-	@Autowired
 	private UserRepository userRepository;
-	
-	@GetMapping()
+
+	public UserController(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	@GetMapping
 	public List<User> getUsers() {
 		return userRepository.findAll();
 	}
 
-	@PostMapping("/add")
+	@GetMapping("{id}")
+	public User getUsers(long userId) {
+		return userRepository.findById(userId).get();
+	}
+
+	@PostMapping
 	public void createUser(@RequestBody User user) {
 		userRepository.save(user);
 	}

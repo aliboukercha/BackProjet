@@ -1,8 +1,8 @@
-package com.nab.controller;
+package com.nab.employee.controllers;
 
 
-import com.nab.db.EmployeeRepository;
-import com.nab.exception.ResourceNotFoundException;
+import com.nab.employee.db.EmployeeRepository;
+import com.nab.exceptions.ResourceNotFoundException;
 import com.nab.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
